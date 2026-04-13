@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasanka Theekshana Lakshan | Professional Pizza Chef & Kitchen Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #C41E3A;
+            --primary-orange: #FF6B35;
+            --pure-black: #0a0a0a;
+            --dark-black: #111111;
+            --card-black: #1a1a1a;
+            --light-black: #222222;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --accent-gold: #D4A574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            border-bottom: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--text-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(196,30,58,0.7) 100%),
+                        url('https://kimi-web-img.moonshot.cn/img/thumbs.dreamstime.com/8b5d1db672b99662760bb04a3d0ebdf8d602876b.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-white);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
+            color: var(--text-white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            color: var(--primary-orange);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-gray);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-orange);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,107,53,0.6);
+            background: transparent;
+            color: var(--primary-orange);
+            border-color: var(--primary-orange);
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,107,53,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,107,53,0.3);
+            color: var(--text-white);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--text-white);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-red), var(--primary-orange));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--dark-black);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255,107,53,0.2);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-orange);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(196,30,58,0.3), rgba(255,107,53,0.3));
+            color: var(--text-white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px solid rgba(255,107,53,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--primary-orange);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: var(--pure-black);
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-red), var(--primary-orange));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-orange);
+            border: 4px solid var(--pure-black);
+            border-radius: 50%;
+            top: 0;
+            box-shadow: 0 0 0 4px var(--primary-red);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: var(--card-black);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,107,53,0.1);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,107,53,0.3);
+        }
+
+        .timeline-date {
+            color: var(--primary-orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+
+        .timeline-place {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--dark-black);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-black);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-orange);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196,30,58,0.8), rgba(255,107,53,0.8));
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(196,30,58,0.3);
+            border-color: transparent;
+        }
+
+        .skill-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card:hover > * {
+            color: var(--text-white);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .skill-card:hover .skill-icon {
+            color: var(--text-white);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-white);
+        }
+
+        .skill-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .skill-card:hover p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-red), var(--primary-orange));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        /* Languages & Education */
+        .info-section {
+            background: linear-gradient(135deg, var(--pure-black) 0%, var(--light-black) 100%);
+            color: var(--text-white);
+        }
+
+        .info-section .section-title {
+            color: var(--text-white);
+        }
+
+        .info-section .section-title::after {
+            background: var(--primary-orange);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .info-box h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-item, .edu-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .language-item:last-child, .edu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .lang-name, .edu-degree {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-white);
+        }
+
+        .lang-level, .edu-school {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .lang-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .lang-fill {
+            height: 100%;
+            background: var(--primary-orange);
+            border-radius: 3px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--pure-black);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255,107,53,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: var(--text-white);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-placeholder {
+            background: linear-gradient(135deg, var(--card-black), var(--light-black));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            height: 100%;
+            border: 2px dashed rgba(255,107,53,0.3);
+        }
+
+        .gallery-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(196,30,58,0.3) 0%, rgba(255,107,53,0.3) 100%);
+            color: var(--text-white);
+            text-align: center;
+            border-top: 1px solid rgba(255,107,53,0.2);
+            border-bottom: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .contact .section-title {
+            color: var(--text-white);
+        }
+
+        .contact .section-title::after {
+            background: var(--primary-orange);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(0,0,0,0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,107,53,0.3);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0,0,0,0.5);
+            border-color: var(--primary-orange);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-white);
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--text-gray);
+        }
+
+        .availability-banner {
+            background: rgba(0,0,0,0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 2px solid rgba(255,107,53,0.4);
+        }
+
+        .availability-banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-orange);
+        }
+
+        .availability-banner p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--pure-black);
+            color: var(--text-white);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,107,53,0.1);
+        }
+
+        footer p {
+            opacity: 0.7;
+            color: var(--text-gray);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image::before {
+                display: none;
+            }
+
+            .timeline-container::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 10px !important;
+            }
+
+            .timeline-content {
+                background: var(--card-black);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">STL Kitchen</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Experienced Pizza Chef & Kitchen Specialist in Europe</h1>
+            <p class="hero-subtitle">Sasanka Theekshana Lakshan</p>
+            <p class="hero-description">
+                With 3+ years of professional experience in Latvia's dynamic restaurant scene, 
+                I specialize in authentic pizza making, cold & hot kitchen operations, and 
+                delivering exceptional culinary experiences. Ready to bring my expertise to your kitchen.
+            </p>
+            <a href="#contact" class="cta-button">Hire Me</a>
+            <div class="hero-badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Schengen Work Permit</span>
+                <span class="badge"><i class="fas fa-map-marker-alt"></i> Based in Latvia</span>
+                <span class="badge"><i class="fas fa-utensils"></i> 3+ Years Experience</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://kimi-web-img.moonshot.cn/img/fornopiombo.com/7ffa024fa9f7c6cc5c23242b7adc0e28c5a61f1a.jpg" alt="Pizza Dough Preparation">
+            </div>
+            <div class="about-text">
+                <p>
+                    I am a motivated and hardworking kitchen professional with experience in fast-paced 
+                    restaurant environments in both Sri Lanka and Latvia. I specialize in pizza making, 
+                    including dough preparation, sauce making, and oven baking, as well as cold and hot 
+                    kitchen operations. I am skilled in preparing salads, burgers, desserts, and 
+                    Neapolitan-style pizzas. I am a fast learner, adaptable, and committed to high food 
+                    quality, hygiene, and teamwork.
+                </p>
+                <p>
+                    My goal is to become a professional chef in Europe and continue improving my skills in 
+                    international kitchen environments. I am currently looking for new job opportunities where 
+                    I can learn new cooking techniques, gain valuable experience, improve my career, earn a 
+                    better salary, and build a stable and successful life.
+                </p>
+                <div class="highlight-box">
+                    <h3><i class="fas fa-bullseye"></i> Career Objective</h3>
+                    <p>Seeking opportunities in 4-star hotels and premium restaurants across Europe. 
+                    Open to relocation and committed to culinary excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="timeline" id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025 – Present</div>
+                    <h3 class="timeline-title">Pizza Cook / Cold Kitchen Cook</h3>
+                    <p class="timeline-place">Chilly Pizza Restaurant Network (Tiamo Grupa), Riga, Latvia</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 – 2025</div>
+                    <h3 class="timeline-title">Pizza Cook</h3>
+                    <p class="timeline-place">Pizza Grill 76, Riga, Latvia</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023</div>
+                    <h3 class="timeline-title">Kitchen Assistant</h3>
+                    <p class="timeline-place">Parks Grillbars & Restorāns, Jelgava, Latvia</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2016 – 2019</div>
+                    <h3 class="timeline-title">Pizza Baker / Kitchen Support</h3>
+                    <p class="timeline-place">Local Pizzeria, Colombo, Sri Lanka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Professional Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-pizza-slice skill-icon"></i>
+                <h3>Pizza Dough Preparation</h3>
+                <p>Expert in dough mixing, fermentation, and hand-stretching techniques</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-fire skill-icon"></i>
+                <h3>Oven Management</h3>
+                <p>High-temperature pizza oven operation and temperature control</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-leaf skill-icon"></i>
+                <h3>Cold Kitchen Operations</h3>
+                <p>Salads, appetizers, desserts, and cold food preparation</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 88%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-hamburger skill-icon"></i>
+                <h3>Hot Kitchen Cooking</h3>
+                <p>Burgers, main courses, sauces, and hot food preparation</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-award skill-icon"></i>
+                <h3>Neapolitan Techniques</h3>
+                <p>Authentic Italian pizza making with traditional methods</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-shield-alt skill-icon"></i>
+                <h3>Food Safety & Hygiene</h3>
+                <p>HACCP knowledge and strict hygiene protocol adherence</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-users skill-icon"></i>
+                <h3>Teamwork & Organization</h3>
+                <p>Kitchen coordination and efficient workflow management</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-tachometer-alt skill-icon"></i>
+                <h3>High-Pressure Performance</h3>
+                <p>Thriving in fast-paced, high-volume restaurant environments</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 93%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages & Education -->
+    <section class="info-section" id="education">
+        <h2 class="section-title">Languages & Education</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <div class="language-item">
+                    <div class="lang-name">English</div>
+                    <div class="lang-level">Professional Working Proficiency (B2)</div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <div class="lang-name">German</div>
+                    <div class="lang-level">Basic Communication (A1)</div>
+                    <div class="lang-bar">
+                        <div class="lang-fill" style="width: 25%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div class="edu-item">
+                    <div class="edu-degree">Master's Degree in Mechanical Engineering</div>
+                    <div class="edu-school">Latvia</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">Bachelor's Degree in ICT</div>
+                    <div class="edu-school">Sri Lanka</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Culinary Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/caputoflour.com/297846295702493bb8ad992abecc5dab3b361ed2.jpg" alt="Neapolitan Pizza">
+                <div class="gallery-overlay">
+                    <h3>Neapolitan Pizza</h3>
+                    <p>Authentic Italian style with perfect crust</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/allgreens.co.uk/61457b3bac04a9b103f945e0a251cf87e1fec479.jpeg" alt="Fine Dining Plating">
+                <div class="gallery-overlay">
+                    <h3>Fine Dining Plating</h3>
+                    <p>Attention to detail in every dish</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/ffk-uploads.s3.amazonaws.com/8c22f28743ece9b5d7d284d915cb030e6b8987bb.jpeg" alt="Gourmet Plating">
+                <div class="gallery-overlay">
+                    <h3>Gourmet Presentation</h3>
+                    <p>Creative food styling and presentation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <h3>Your Photo Here</h3>
+                    <p>Kitchen Action Shot</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <h3>Your Photo Here</h3>
+                    <p>Pizza Creation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <h3>Your Photo Here</h3>
+                    <p>Team Kitchen Photo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <h3>Phone</h3>
+                <p>+371 XX XXX XXX</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Email</h3>
+                <p>sasanka.lakshan@email.com</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>WhatsApp</h3>
+                <p>+371 XX XXX XXX</p>
+            </div>
+        </div>
+        <div class="availability-banner">
+            <h3><i class="fas fa-briefcase"></i> Available for Work in Europe</h3>
+            <p>Open to relocation and new opportunities in restaurants and 4-star hotels. 
+            Valid Schengen work permit. Ready to start immediately.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sasanka Theekshana Lakshan. All rights reserved. | Professional Pizza Chef & Kitchen Specialist</p>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .skill-card, .gallery-item, .info-box').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'var(--pure-black)';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '1rem';
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate progress bars on scroll
+        const progressBars = document.querySelectorAll('.progress-fill');
+        const animateProgress = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 100);
+                }
+            });
+        });
+
+        progressBars.forEach(bar => animateProgress.observe(bar));
+    </script>
+</body>
+</html>
